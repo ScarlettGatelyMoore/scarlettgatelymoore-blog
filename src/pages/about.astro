@@ -1,63 +1,239 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const title = "About — Scarlett Gately Moore";
+const description = "About Scarlett Gately Moore — open source developer, Debian Developer, and Arizona property appraiser.";
 ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      .grid-bg {
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(55,138,221,0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(55,138,221,0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .orb {
+        position: fixed;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(24,95,165,0.15) 0%, transparent 70%);
+        top: -200px;
+        right: -200px;
+        pointer-events: none;
+        z-index: 0;
+      }
+      main {
+        position: relative;
+        z-index: 1;
+        max-width: 720px;
+        width: calc(100% - 4rem);
+        margin: 0 auto;
+        padding: 4rem 0;
+        animation: fadeUp 0.6s ease forwards;
+      }
+      .page-tag {
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .page-tag::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background: var(--accent);
+      }
+      .prose h1 {
+        font-family: 'Space Mono', monospace;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+      .prose h2 {
+        font-family: 'Space Mono', monospace;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin: 2.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--blue-border);
+      }
+      .prose p {
+        font-size: 16px;
+        color: var(--text-muted);
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+      }
+      .prose strong { color: var(--text); font-weight: 500; }
+      .prose ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .prose ul li {
+        font-size: 15px;
+        color: var(--text-muted);
+        line-height: 1.6;
+        padding-left: 1.25rem;
+        position: relative;
+      }
+      .prose ul li::before {
+        content: '//';
+        position: absolute;
+        left: 0;
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        top: 3px;
+      }
+      .prose a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--blue-border);
+        transition: border-color 0.2s;
+      }
+      .prose a:hover { border-bottom-color: var(--accent); }
+      .contact-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+      .contact-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+        background: var(--bg2);
+        border: 1px solid var(--blue-border);
+        border-radius: 6px;
+        text-decoration: none;
+        transition: border-color 0.2s, background 0.2s;
+      }
+      .contact-row:hover {
+        border-color: var(--accent);
+        background: var(--bg3);
+      }
+      .contact-label {
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.05em;
+        min-width: 70px;
+      }
+      .contact-value {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(16px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+    <div class="orb"></div>
+    <Header />
+    <main>
+      <div class="page-tag">about</div>
+      <div class="prose">
+        <h1>Hi, I'm Scarlett.</h1>
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+        <p>
+          I'm an open source developer with 11+ years of experience in Linux distribution
+          development, software packaging, and CI/CD infrastructure — and recently, an
+          Apache County property tax appraiser in training.
+        </p>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+        <h2>The open source side</h2>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+        <p>
+          I'm a <strong>Debian Developer</strong> and long-time contributor to the Linux
+          ecosystem, with deep roots in the KDE and Ubuntu communities. Over the years
+          I've worn a lot of hats:
+        </p>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+        <ul>
+          <li><strong>Kubuntu Project Lead</strong> — led distribution development, release planning, packaging pipelines, and community coordination</li>
+          <li><strong>Debian Developer</strong> — official upload privileges, contributing to reproducible builds, LTS security updates, and package maintenance</li>
+          <li><strong>KDE DevOps Engineer</strong> — architected CI/CD infrastructure supporting hundreds of KDE applications and thousands of developers worldwide</li>
+          <li><strong>Netrunner Distribution</strong> — project manager for a community-driven Linux distribution through multiple stable release cycles</li>
+        </ul>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+        <p>
+          I've worked extensively with Jenkins, GitLab CI, Docker, LXD, Snap, AppImage,
+          and multi-architecture builds across AMD64, ARM64, and ARMHF. My packaging work
+          spans Python, Ruby, C/C++, and Bash, and I've upstreamed improvements across
+          Debian, Ubuntu, and KDE.
+        </p>
+
+        <p>I hold a BS in Computer Information Systems from DeVry University.</p>
+
+        <h2>The day job</h2>
+
+        <p>
+          In a bit of a career pivot, I'm now venturing into <strong>property appraisal
+          with Apache County, Arizona</strong> as a Property Appraiser I. Arizona's dual
+          valuation system, legal classifications, assessment ratios, and the three
+          approaches to value keep things interesting. I'm enjoying learning an entirely
+          new discipline from the ground up.
+        </p>
+
+        <p>
+          St. Johns is a long way from a Jenkins server, but the systematic thinking
+          translates surprisingly well.
+        </p>
+
+        <h2>This blog</h2>
+
+        <p>
+          This is where I write about what I'm building and learning — open source tooling,
+          Linux, project writeups, and occasionally what it's like to context-switch between
+          property tax law and release management.
+        </p>
+
+        <h2>Get in touch</h2>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-row" href="mailto:sgmoore@debian.org">
+          <span class="contact-label">email</span>
+          <span class="contact-value">sgmoore@debian.org</span>
+        </a>
+        <a class="contact-row" href="https://github.com/scarlettgatelymoore" target="_blank">
+          <span class="contact-label">github</span>
+          <span class="contact-value">github.com/scarlettgatelymoore</span>
+        </a>
+        <a class="contact-row" href="https://www.linkedin.com/in/scarlettgatelymoore" target="_blank">
+          <span class="contact-label">linkedin</span>
+          <span class="contact-value">linkedin.com/in/scarlettgatelymoore</span>
+        </a>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
