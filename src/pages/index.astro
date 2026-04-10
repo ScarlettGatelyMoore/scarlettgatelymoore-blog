@@ -233,6 +233,16 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
         vertical-align: middle;
         animation: blink 1s step-end infinite;
       }
+      .donate-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .donate-desc {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin: 0;
+      }
       @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       @keyframes fadeUp {
         from { opacity: 0; transform: translateY(16px); }
@@ -318,6 +328,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
           <span class="post-title">What property appraisal taught me about data systems</span>
           <span class="post-tag">career</span>
           <span class="post-date">2026-03-02</span>
+        </a>
+      </div>
+       <div class="divider"></div>
+
+      <div class="section-label">// support the work</div>
+      <div class="donate-row">
+        <p class="donate-desc">Kubuntu and open source work is volunteer-powered. If you find value in it, consider supporting:</p>
+        <a class="dbox-donation-page-button" href="https://donorbox.org/open-source-work?" style="background: rgb(18, 138, 237); color: rgb(255, 255, 255); text-decoration: none; font-family: Verdana, sans-serif; display: flex; align-items: center; gap: 8px; width: fit-content; font-size: 16px; border-radius: 5px; line-height: 24px; padding: 8px 24px;">
+          <img role="presentation" src="https://donorbox.org/images/white_logo.svg" style="width:18px;height:18px;">Donate
         </a>
       </div>
     </main>
