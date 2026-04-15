@@ -234,6 +234,11 @@ const formattedUpdated = updatedDate ? updatedDate.toISOString().slice(0, 10) : 
         from { opacity: 0; transform: translateY(16px); }
         to { opacity: 1; transform: translateY(0); }
       }
+      .donate-post {
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(55,138,221,0.25);
+      }
     </style>
   </head>
   <body>
@@ -260,8 +265,14 @@ const formattedUpdated = updatedDate ? updatedDate.toISOString().slice(0, 10) : 
         <slot />
       </div>
 
+      <div class="donate-post">
+        <a class="dbox-donation-page-button" href="https://donorbox.org/open-source-work?" style="background: rgb(18, 138, 237); color: rgb(255, 255, 255); text-decoration: none; font-family: Verdana, sans-serif; display: flex; align-items: center; gap: 8px; width: fit-content; font-size: 16px; border-radius: 5px; line-height: 24px; padding: 8px 24px;">
+          <img role="presentation" src="https://donorbox.org/images/white_logo.svg" style="width:18px;height:18px;">Donate
+        </a>
+      </div>
+
       <div class="author-bio">
-        // <a href="/about">Scarlett Gately Moore</a> — Debian Developer, St. Johns AZ
+        // <a href="/about">Scarlett Gately Moore</a> — Debian/Kubuntu Developer, St. Johns AZ
       </div>
     </main>
     <Footer />
