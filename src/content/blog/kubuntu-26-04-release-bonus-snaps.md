@@ -14,6 +14,12 @@ Kubuntu 26.04 LTS "Resolute Raccoon" is out and ready for download. Read the ful
 
 👉 [Kubuntu 26.04 Release Notes](https://www.kubuntu.org/news/kubuntu-26-04-release-notes/)
 
+## Special thanks
+
+A heartfelt thank you to the **Kubuntu team** — this release represents countless hours of volunteer work across packaging, testing, bug triage, documentation, and community support. None of this happens without you.
+
+And a special thank you to **[KFocus](https://kfocus.org)** — their continued investment in the Kubuntu ecosystem, from hardware support to theme work to testing, makes a real and tangible difference to the quality of every release. It is very much appreciated.
+
 ## New snap stable releases
 
 A collection of KDE applications have landed in stable. Install any of them with:
@@ -92,9 +98,3 @@ Please file bugs on the [KDE Bug Tracker](https://bugs.kde.org) or find us on Ma
 - **Kubuntu development:** [#kubuntu-devel:ubuntu.com](https://matrix.to/#/#kubuntu-devel:ubuntu.com)
 
 It's been a busy week. Thank you to everyone who tested, reported bugs, and cheered us on. 🎉
-
-## Special thanks
-
-A heartfelt thank you to the **Kubuntu team** — this release represents countless hours of volunteer work across packaging, testing, bug triage, documentation, and community support. None of this happens without you.
-
-And a special thank you to **[KFocus](https://kfocus.org)** — their continued investment in the Kubuntu ecosystem, from hardware support to theme work to testing, makes a real and tangible difference to the quality of every release. It is very much appreciated.
