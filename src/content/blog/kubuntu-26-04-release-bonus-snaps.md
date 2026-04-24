@@ -1,12 +1,12 @@
 ---
-title: "KDE snaps update — more stable releases and Kubuntu 26.04 is here!"
-description: "A fresh batch of KDE application snaps land in stable, plus Kubuntu 26.04 LTS Resolute Raccoon is officially released."
+title: "Kubuntu Resolute Raccoon 26.04 release with bonus snaps"
+description: "Kubuntu 26.04 LTS Resolute Raccoon is officially released, plus a fresh batch of KDE application snaps land in stable."
 pubDate: 2026-04-24
 tags: ["kde", "snap", "linux", "kubuntu", "planet-kde"]
 heroImage: ""
 ---
 
-A big day for KDE on Linux — **Kubuntu 26.04 LTS "Resolute Raccoon" is officially released**, and we have a fresh batch of KDE application snaps landing in stable to go along with it.
+A big day for KDE on Linux — **Kubuntu 26.04 LTS "Resolute Raccoon" is officially released**, and we have a fresh batch of KDE application snaps landing in stable to celebrate.
 
 ## 🦝 Kubuntu 26.04 LTS is here
 
@@ -92,3 +92,9 @@ Please file bugs on the [KDE Bug Tracker](https://bugs.kde.org) or find us on Ma
 - **Kubuntu development:** [#kubuntu-devel:ubuntu.com](https://matrix.to/#/#kubuntu-devel:ubuntu.com)
 
 It's been a busy week. Thank you to everyone who tested, reported bugs, and cheered us on. 🎉
+
+## Special thanks
+
+A heartfelt thank you to the **Kubuntu team** — this release represents countless hours of volunteer work across packaging, testing, bug triage, documentation, and community support. None of this happens without you.
+
+And a special thank you to **[KFocus](https://kfocus.org)** — their continued investment in the Kubuntu ecosystem, from hardware support to theme work to testing, makes a real and tangible difference to the quality of every release. It is very much appreciated.
