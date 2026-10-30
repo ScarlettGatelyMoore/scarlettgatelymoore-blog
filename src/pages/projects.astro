@@ -1,0 +1,96 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const title = `Projects — ${SITE_TITLE}`;
+const description = 'Selected work in Linux distribution engineering, KDE, Kubuntu, Snapcraft, and open-source infrastructure.';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description || SITE_DESCRIPTION} />
+    <style>
+      .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(55,138,221,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(55,138,221,.04) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+      .orb { position: fixed; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(24,95,165,.15) 0%, transparent 70%); top: -200px; right: -200px; pointer-events: none; z-index: 0; }
+      main { position: relative; z-index: 1; max-width: 760px; width: calc(100% - 4rem); margin: 0 auto; padding: 4rem 0; }
+      .page-tag { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 1.5rem; }
+      h1 { font-family: 'Space Mono', monospace; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; margin: 0 0 1rem; color: var(--text); }
+      .intro { max-width: 620px; color: var(--text-muted); font-size: 16px; line-height: 1.8; margin-bottom: 2.5rem; }
+      .project-list { display: grid; gap: 1rem; }
+      .project { background: var(--bg2); border: 1px solid var(--blue-border); border-radius: 6px; padding: 1.5rem; }
+      .project h2 { font-family: 'Space Mono', monospace; font-size: 15px; color: var(--accent); margin: 0 0 .75rem; }
+      .project p { color: var(--text-muted); font-size: 14px; line-height: 1.75; margin: 0 0 1rem; }
+      .project .status { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: .08em; color: var(--text-dim); text-transform: uppercase; }
+      .project a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--blue-border); }
+      .project a:hover { border-bottom-color: var(--accent); }
+      @media (max-width: 600px) { main { width: calc(100% - 2rem); padding: 2.5rem 0; } }
+    </style>
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+    <div class="orb"></div>
+    <Header />
+    <main>
+      <div class="page-tag">// selected work</div>
+      <h1>Projects &amp; engineering</h1>
+      <p class="intro">
+        A selection of the ecosystems, tools, and infrastructure I've worked on.
+        Much of this work happens in collaboration with upstream developers and
+        volunteer communities; these notes highlight the engineering problems and
+        the solutions, not just the project names.
+      </p>
+      <div class="project-list">
+        <article class="project">
+          <h2>KDE Neon 6 · Core26 migration</h2>
+          <p>
+            Modernizing the KDE Neon 6 Snapcraft extension for the Core26 generation.
+            The work touches Qt6 and KF6 runtime integration, launcher environment
+            handling, GPU support, and compatibility across Snap base generations.
+          </p>
+          <div class="status">Snapcraft · KDE · In progress</div>
+        </article>
+        <article class="project">
+          <h2>KDE content snaps &amp; runtimes</h2>
+          <p>
+            Maintaining and improving shared KDE content snaps that provide the
+            libraries and runtime components used by KDE application snaps. The focus
+            is dependable packaging, consistent library use, and a smoother application
+            experience across supported systems.
+          </p>
+          <div class="status">KDE · Qt6 · Packaging</div>
+        </article>
+        <article class="project">
+          <h2>Kubuntu</h2>
+          <p>
+            Distribution development and release engineering in the Ubuntu family:
+            package integration, testing, release coordination, and collaboration
+            with the wider Ubuntu and KDE communities.
+          </p>
+          <div class="status">Linux distribution · Community</div>
+        </article>
+        <article class="project">
+          <h2>Linux build &amp; CI infrastructure</h2>
+          <p>
+            Building and maintaining automation for packaging and release workflows,
+            including Jenkins and GitLab CI, container-based build environments, and
+            multi-architecture Linux builds.
+          </p>
+          <div class="status">CI/CD · Jenkins · GitLab · Linux</div>
+        </article>
+        <article class="project">
+          <h2>Debian packaging &amp; upstream work</h2>
+          <p>
+            Years of experience in Debian packaging and maintenance, including the
+            practical work of preparing software for distribution and collaborating
+            with upstream projects. This remains an important part of my open-source
+            background, even as my current focus shifts toward KDE, Kubuntu, and Snapcraft.
+          </p>
+          <div class="status">Debian · Packaging · Open source</div>
+        </article>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
