@@ -1,0 +1,159 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const title = `Projects — ${SITE_TITLE}`;
+const description = 'Selected work in Linux distribution engineering, KDE, Kubuntu, Snapcraft, and open-source infrastructure.';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description || SITE_DESCRIPTION} />
+    <style>
+      .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(rgba(55,138,221,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(55,138,221,.04) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+      .orb { position: fixed; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(24,95,165,.15) 0%, transparent 70%); top: -200px; right: -200px; pointer-events: none; z-index: 0; }
+      main { position: relative; z-index: 1; max-width: 760px; width: calc(100% - 4rem); margin: 0 auto; padding: 4rem 0; }
+      .page-tag { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 1.5rem; }
+      h1 { font-family: 'Space Mono', monospace; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; margin: 0 0 1rem; color: var(--text); }
+      .intro { max-width: 620px; color: var(--text-muted); font-size: 16px; line-height: 1.8; margin-bottom: 2.5rem; }
+      .project-list { display: grid; gap: 1rem; }
+      .project { background: var(--bg2); border: 1px solid var(--blue-border); border-radius: 6px; padding: 1.5rem; }
+      .project h2 { font-family: 'Space Mono', monospace; font-size: 15px; color: var(--accent); margin: 0 0 .75rem; }
+      .project p { color: var(--text-muted); font-size: 14px; line-height: 1.75; margin: 0 0 1rem; }
+      .project .status { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: .08em; color: var(--text-dim); text-transform: uppercase; }
+      .project a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--blue-border); }
+      .project a:hover { border-bottom-color: var(--accent); }
+      @media (max-width: 600px) { main { width: calc(100% - 2rem); padding: 2.5rem 0; } }
+    </style>
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+    <div class="orb"></div>
+    <Header />
+    <main>
+      <div class="page-tag">// selected work</div>
+      <h1>Projects &amp; engineering</h1>
+      <p class="intro">
+        A selection of the ecosystems, tools, and infrastructure I've worked on.
+        Much of this work happens in collaboration with upstream developers and
+        volunteer communities; these notes highlight the engineering problems and
+        the solutions, not just the project names.
+      </p>
+      <div class="project-list">
+        <article class="project">
+          <h2>KDE Snaps &amp; shared runtimes</h2>
+          <p>
+            I helped bring the Snap model to KDE applications after Canonical introduced
+            the technology, and have been involved with KDE Snaps from the early days —
+            serving as their solo maintainer for much of the project's existence. The work
+            spans application packaging, shared KDE content snaps and runtimes, Qt/KF
+            integration, and the ongoing maintenance that keeps the ecosystem usable.
+          </p>
+          <p>
+            My current engineering focus includes the KDE Neon Snapcraft extension,
+            Core26 support, launcher and environment integration, and GPU compatibility
+            across Snap base generations.
+          </p>
+          <div class="status">KDE · Snapcraft · Qt6 · KF6 · Core26 · Ongoing</div>
+        </article>
+
+        <article class="project">
+          <h2>KDE Neon Core</h2>
+          <p>
+            I developed the business plan for KDE Neon Core: a complete operating-system
+            initiative built on Ubuntu Core, not the existing KDE neon desktop distribution.{" "}
+            <a href="https://www.enioka.com/" target="_blank" rel="noopener noreferrer">enioka</a>{" "}
+            took up the proposal and brought the work forward for Core24, then invited me
+            back to contribute to the Core26 effort.
+          </p>
+          <div class="status">KDE · Ubuntu Core · Product planning · Core24 / Core26</div>
+        </article>
+
+        <article class="project">
+          <h2>KDE continuous integration</h2>
+          <p>
+            During Season of KDE, I built the first iteration of KDE's continuous
+            integration infrastructure, hosted at <code>build.kde.org</code> and powered
+            by Jenkins. That work helped establish automated build infrastructure for
+            KDE's development ecosystem and became a turning point in my engineering career.
+          </p>
+          <div class="status">KDE · Jenkins · CI/CD · Foundational work</div>
+        </article>
+
+        <article class="project">
+          <h2>KDE neon — original team</h2>
+          <p>
+            I was a significant part of the original team that brought KDE neon to life:
+            a new way of delivering the latest KDE software on a stable Ubuntu LTS base,
+            with CI-driven builds and integration at its heart. This grew out of the
+            close collaboration and experience of the early Kubuntu team, and became
+            one of the defining projects of that chapter of my career.
+          </p>
+          <div class="status">KDE · Ubuntu LTS · CI-driven distribution · Original team</div>
+        </article>
+
+        <article class="project">
+          <h2>Kubuntu &amp; Ubuntu packaging</h2>
+          <p>
+            I joined Kubuntu in 2012 and began my packaging work during the transition
+            from monolithic <code>kdelibs</code> to modular KDE Frameworks, helping package
+            the effort for Kubuntu and integrate it into Ubuntu. I later returned for the
+            Noble release and contributed to the Resolute LTS release and early work on the{" "}
+            <a href="https://www.einpresswire.com/article/930823977/kubuntu-focus-techpaladin-software-and-kde-e-v-announce-the-bullet-proof-kde-software-initiative" target="_blank" rel="noopener noreferrer">Bulletproof KDE software initiative</a>{" "}
+            through Kubuntu Focus. That work has since moved to Techpaladin,
+            whose team I wish well.
+          </p>
+          <div class="status">Kubuntu Developer · Kubuntu Council · Ubuntu · Packaging</div>
+        </article>
+
+        <article class="project">
+          <h2>Reproducible builds</h2>
+          <p>
+            Through an early Outreach program, I was hired by the Linux Foundation to
+            contribute to the early reproducible builds effort. I worked on making
+            software packages reproducible, including CMake, helping improve the ability
+            to independently verify that builds can be recreated from their source.
+          </p>
+          <div class="status">Linux Foundation · Reproducible Builds · Packaging</div>
+        </article>
+
+        <article class="project">
+          <h2>DCI &amp; Netrunner</h2>
+          <p>
+            After my KDE CI work, I joined Blue Systems to maintain DCI, a Debian-based
+            continuous integration system that underpinned the Netrunner distribution.
+            This brought together my experience in Debian, build automation, and the
+            practical engineering of a Linux distribution.
+          </p>
+          <div class="status">Blue Systems · Debian · CI/CD · Netrunner</div>
+        </article>
+
+        <article class="project">
+          <h2>Debian packaging &amp; Python</h2>
+          <p>
+            My Debian work has included contributions with the Debian KDE/Qt team,
+            Python packaging work with Mycroft, and earlier reproducible-builds
+            contributions. I am an official Debian Developer with upload privileges.
+            My Debian activity is quieter while I balance other commitments, but it
+            remains an important part of my open-source work.
+          </p>
+          <div class="status">Debian Developer · KDE/Qt · Python · Packaging</div>
+        </article>
+
+        <article class="project">
+          <h2>Open-source community service</h2>
+          <p>
+            Alongside engineering, I've served two terms on the Ubuntu Community Council,
+            first around 2015 and then returning for a second term more recently. I'm also
+            a member of KDE e.V. and the Kubuntu Council, staying involved in the communities
+            and projects that have shaped my career.
+          </p>
+          <div class="status">Ubuntu Community Council · KDE e.V. · Kubuntu Council</div>
+        </article>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
